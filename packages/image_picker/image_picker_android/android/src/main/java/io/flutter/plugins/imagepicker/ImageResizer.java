@@ -33,6 +33,9 @@ class ImageResizer {
    */
   String resizeImageIfNeeded(
       String imagePath, @Nullable Double maxWidth, @Nullable Double maxHeight, int imageQuality) {
+    if (imagePath == null) {
+      return null;
+    }
     SizeFCompat originalSize = readFileDimensions(imagePath);
     if (originalSize.getWidth() == -1 || originalSize.getHeight() == -1) {
       return imagePath;

@@ -86,6 +86,9 @@ class FileUtils {
       //
       // See https://github.com/flutter/flutter/issues/100025 for more details.
       return null;
+    } catch (IllegalStateException e) {
+      // The same with `SecurityException`.
+      return null;
     }
   }
 
